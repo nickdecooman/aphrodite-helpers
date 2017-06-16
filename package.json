@@ -6,7 +6,19 @@
   "repository": "git@github.com:nickdecooman/aphrodite-helpers.git",
   "author": "Nick De Cooman <nick@nickdecooman.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "index.js"
+    ]
+  },
   "devDependencies": {
+    "coveralls": "^2.13.1",
     "eslint": "^4.0.0",
     "eslint-config-prettier": "^2.1.1",
     "eslint-plugin-jest": "^20.0.3",

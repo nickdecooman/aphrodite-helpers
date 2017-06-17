@@ -24,7 +24,8 @@
     "eslint-plugin-jest": "^20.0.3",
     "eslint-plugin-prettier": "^2.1.2",
     "jest": "^20.0.4",
-    "prettier": "^1.4.4"
+    "prettier": "^1.4.4",
+    "aphrodite": "^1.2.1"
   },
   "peerDependencies": {
     "aphrodite": "^1.2.1"

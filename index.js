@@ -21,11 +21,14 @@ function isValidStyle(style) {
 }
 
 function mergeStyles(styleA, styleB) {
+  if (!isValidStyle(styleA) && !isValidStyle(styleB)) {
+    return {};
+  }
   if (!isValidStyle(styleA)) {
-    return styleB;
+    return styleB._definition;
   }
   if (!isValidStyle(styleB)) {
-    return styleA;
+    return styleA._definition;
   }
   return Object.assign({}, styleA._definition, styleB._definition);
 }

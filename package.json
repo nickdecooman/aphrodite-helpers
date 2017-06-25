@@ -8,7 +8,9 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "build": "node rollup",
+    "publish": "cd dist && npm publish"
   },
   "jest": {
     "verbose": true,
@@ -17,7 +19,20 @@
       "index.js"
     ]
   },
+  "babel": {
+    "presets": [
+      ["latest", { "es2015": { "modules": false } }]
+    ],
+    "plugins": [
+      "transform-runtime"
+    ]
+  },
   "devDependencies": {
+    "aphrodite": "^1.2.1",
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-latest": "^6.24.1",
+    "babel-register": "^6.24.1",
     "coveralls": "^2.13.1",
     "eslint": "^4.0.0",
     "eslint-config-prettier": "^2.1.1",
@@ -25,7 +40,10 @@
     "eslint-plugin-prettier": "^2.1.2",
     "jest": "^20.0.4",
     "prettier": "^1.4.4",
-    "aphrodite": "^1.2.1"
+    "rollup": "^0.43.0",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-uglify": "^2.0.1",
+    "uglify-es": "^3.0.19"
   },
   "peerDependencies": {
     "aphrodite": "^1.2.1"
